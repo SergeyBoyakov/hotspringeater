@@ -10,9 +10,6 @@ public class Main {
 
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
-        log.info("context: " + context.getBeansOfType(TerminatorQuoter.class));
-        log.info("context: " + context.getBeansOfType(InjectRandomIntAnnotationBeanPostProcessor.class));
-        log.info("context: " + context.getBeansOfType(SimpleBean.class));
         context.getBean(TerminatorQuoter.class).sayQuote();
     }
 }
