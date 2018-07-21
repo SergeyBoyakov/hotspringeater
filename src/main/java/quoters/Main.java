@@ -8,8 +8,11 @@ import java.util.logging.Logger;
 public class Main {
     static final Logger log = Logger.getLogger("Main");
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
-        context.getBean(TerminatorQuoter.class).sayQuote();
+        while (true) {
+            Thread.sleep(100);
+            context.getBean(Quoter.class).sayQuote();
+        }
     }
 }

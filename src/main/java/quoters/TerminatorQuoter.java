@@ -2,6 +2,7 @@ package quoters;
 
 import javax.annotation.PostConstruct;
 
+@Profiling
 public class TerminatorQuoter implements Quoter {
     private String message;
 
