@@ -10,6 +10,10 @@ public class TerminatorQuoter implements Quoter {
     @InjectRandomInt(min = 2, max = 7)
     private int repeat;
 
+    public void setRepeat(int repeat) {
+        this.repeat = repeat;
+    }
+
     public void setMessage(String message) {
         this.message = message;
     }
