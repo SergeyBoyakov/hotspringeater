@@ -3,6 +3,7 @@ package quoters;
 import javax.annotation.PostConstruct;
 
 @Profiling
+@DeprecatedClass(newImpl = T1000.class)
 public class TerminatorQuoter implements Quoter {
     private String message;
 
@@ -24,7 +25,9 @@ public class TerminatorQuoter implements Quoter {
     }
 
     @Override
+    @PostProxy
     public void sayQuote() {
+        System.out.println("Phase 3");
         for (int i = 0; i < repeat; i++)
             System.out.println("message = " + message);
     }
